@@ -10,7 +10,7 @@ class MyDocument extends Document {
   render() {
     return (
       // TODO: Add dark mode support
-      <Html className='' lang="en">
+      <Html className='scroll-smooth' lang="en">
         <Head />
         <body className='bg-[#f7ebd4] dark:bg-gray-800'>
           <Main />
