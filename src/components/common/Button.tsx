@@ -3,7 +3,7 @@ export default function Button({ className, label, loading, secondary, onClick, 
   const getClassNames = `
     button
     ${className}
-    ${secondary ? "text-blue-500 bg-white underline-offset-2 decoration-2 hover:underline" : "text-white bg-blue-500 hover:bg-blue-700"}
+    ${secondary ? "text-gray-800 underline-offset-2 decoration-2 hover:underline" : "text-white bg-red-500 hover:bg-red-600"}
     ${loading ? "loading" : ""}
     font-bold py-2 px-4 rounded
   `;
