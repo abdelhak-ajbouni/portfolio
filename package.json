@@ -10,7 +10,7 @@
     "build": "next build",
     "export": "next export",
     "lint": "next lint",
-    "predeploy": "pnpm build && yarn export && touch out/.nojekyll",
+    "predeploy": "pnpm build && pnpm export && touch out/.nojekyll",
     "deploy": "pnpm predeploy && gh-pages -d out -t true"
   },
   "dependencies": {
