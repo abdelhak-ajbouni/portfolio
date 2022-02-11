@@ -1,15 +1,33 @@
-import Container from "src/components/layout/Container"
+import Link from 'next/link'
+// import Image from 'next/image'
+
+import Button from "src/components/common/Button"
+import Connections from "src/components/Connections";
+
+// import astro from "public/images/astro.png"
+// import reactPNG from "public/images/react.png"
 
 export default function Intro({ }: Props) {
   return (
-    <div className="intro">
-      <Container className="justify-between px-4 py-2 my-8">
-        <p className="text-5xl text-red-500 font-bold">Hi!</p>
-        <h1 className="text-7xl text-red-500 font-bold">I&apos;m Abdelhak Ajbouni</h1>
+    <div className="intro mb-32 flex justify-between">
+      <div>
+        <p className="text-5xl text-red-500 font-bold">Hi! 👋 I&apos;m</p>
+        <h1 className="text-8xl text-red-500 font-bold">Abdelhak Ajbouni</h1>
         <p className="text-xl text-gray-500">
-          I&apos;m a fullstack developer based in Tunis, Tunisia.
+          I&apos;m a <b>fullstack developer</b> based in Tunis, Tunisia.
         </p>
-      </Container>
+        <p className="text-xl text-gray-500">
+          I mostly use Javascript but I&apos;m always ready to learn new technologies and improve my skills.
+        </p>
+        <Connections />
+        <Link href="/#contact" passHref><Button className='my-6' label="Lets connect" /></Link>
+      </div>
+      {/* <div>
+        <div className="animate-float">
+          <Image src={reactPNG} alt="react" width={75} height={75} />
+        </div>
+        <Image className="rounded-full" src={astro} alt="astro" width={350} height={350} />
+      </div> */}
     </div >
   );
 }
