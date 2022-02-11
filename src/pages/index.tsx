@@ -1,7 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import Container from "src/components/layout/Container"
 import Intro from 'src/components/Intro'
+import About from 'src/components/About'
+import Contact from 'src/components/Contact'
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +14,24 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Intro />
+      <header className="h-[calc(100vh-10rem)] flex flex-col justify-center">
+        <Container className="px-4 py-2">
+          <Intro />
+        </Container>
+      </header>
+
+      <div className="bg-white">
+        <Container className="px-4 py-16">
+          <About />
+        </Container>
+      </div>
+
+      <div>
+        <Container className="px-4 py-16">
+          <Contact />
+        </Container>
+      </div>
+
     </div>
   )
 }
