@@ -1,4 +1,4 @@
-export default function Button({ className, label, loading, secondary, onClick, children }: Props) {
+export default function Button({ className, label, type, loading, disabled, secondary, onClick, children }: Props) {
 
   const getClassNames = `
     button
@@ -9,8 +9,10 @@ export default function Button({ className, label, loading, secondary, onClick, 
   `;
 
   return (
-    <button className={getClassNames}
-      disabled={loading}
+    <button
+      className={getClassNames}
+      type={type}
+      disabled={loading || disabled}
       onClick={onClick}
     >
       {loading ? 'Loading...' : children || label}
@@ -21,7 +23,9 @@ export default function Button({ className, label, loading, secondary, onClick, 
 Button.defaultProps = {
   className: "",
   label: '',
+  type: 'submit',
   loading: false,
+  disabled: false,
   secondary: false,
   onClick: () => { },
   children: null,
@@ -30,7 +34,9 @@ Button.defaultProps = {
 type Props = {
   className?: string;
   label?: string;
+  type?: "submit" | "button" | "reset" | undefined;
   loading?: boolean;
+  disabled?: boolean;
   secondary?: boolean;
   onClick?: () => void;
   children?: React.ReactNode;

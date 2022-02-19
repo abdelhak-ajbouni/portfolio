@@ -11,8 +11,8 @@ export default function About({ }: Props) {
       <div className="about-text mx-12 my-8">
         <h2 className="text-5xl text-red-500 font-bold mb-2">Who I am</h2>
         <p className="text-xl text-gray-500">
-          I have ~ 4 years of experience working with Javascript. I&apos;m comfortable with a variety of frameworks and libraries.
-          Mainly <span className="text-red-500">React</span>, <span className="text-red-500">Nextjs</span>, and <span className="text-red-500">Expressjs</span>.
+          I have ~ 4 years of experience working with Javascript. I&apos;m comfortable with a variety of frameworks and libraries
+          such as <span className="text-red-500">React</span>, <span className="text-red-500">Nextjs</span>, and <span className="text-red-500">Expressjs</span>.
         </p>
         <p className="text-xl text-gray-500">
           Being hardworking and result oriented, I always work towards achieving best result on each project I lay my hands on.
