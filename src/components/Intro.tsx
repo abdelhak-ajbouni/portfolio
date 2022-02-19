@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Button from "src/components/common/Button"
 import Connections from "src/components/Connections";
 
-// import astro from "public/images/astro.png"
 // import reactPNG from "public/images/react.png"
 
 export default function Intro({ }: Props) {
@@ -20,13 +19,10 @@ export default function Intro({ }: Props) {
           I mostly use Javascript but I&apos;m always ready to learn new technologies and improve my skills.
         </p>
         <Connections />
-        <Link href="/#contact" passHref><Button className='my-6' label="Lets connect" /></Link>
+        <Link href="/#contact" passHref><Button className='my-6' label="Lets connect &#128640;" /></Link>
       </div>
       {/* <div>
-        <div className="animate-float">
-          <Image src={reactPNG} alt="react" width={75} height={75} />
-        </div>
-        <Image className="rounded-full" src={astro} alt="astro" width={350} height={350} />
+        <Image className="rounded-xl" src={coding} alt="coding" width={600} height={400} />
       </div> */}
     </div >
   );
