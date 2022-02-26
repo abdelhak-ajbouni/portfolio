@@ -22,9 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
-    - name: Build
-      run: |
-        pnpm deploy
+    - name: Install dependencies
+      run: pnpm install
+    - name: Build and Deploy
+      run: pnpm deploy
       env:
         MODE: production
         MAIL_ADDRESS: ${{ secrets.MAIL_ADDRESS }}
