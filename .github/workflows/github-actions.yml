@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: |
+        pnpm deploy
+      env:
+        MODE: production
+        MAIL_ADDRESS: ${{ secrets.MAIL_ADDRESS }}
+        MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+        IMGIX_PATH: ${{ secrets.IMGIX_PATH }}
