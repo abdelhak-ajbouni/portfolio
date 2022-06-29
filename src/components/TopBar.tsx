@@ -14,7 +14,14 @@ export default function TopBar({ }: Props) {
         {/* <Link href="/#experience" passHref><Button className='mx-1' label="Experience" secondary /></Link>
         <Link href="/#projects" passHref><Button className='mx-1' label="Projects" secondary /></Link> */}
         <Link href="/#contact" passHref><Button className='mx-1' label="Contact" secondary /></Link>
-        <Link href="/resume" passHref><Button className='ml-4' label="Resume" /></Link>
+        <a
+          href="/files/resume-abdelhak-ajbouni.pdf"
+          alt="resume abdelhak ajbouni"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className='ml-4' label="Resume" />
+        </a>
       </Container>
     </div >
   );
