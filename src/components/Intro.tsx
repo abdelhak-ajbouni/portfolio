@@ -10,7 +10,7 @@ export default function Intro({ }: Props) {
   return (
     <div className="intro mb-32 flex justify-between">
       <div>
-        <p className="text-5xl text-red-500 font-bold">Hi! 👋 I&apos;m</p>
+        <p className="text-5xl text-red-500 font-bold">Hi! &#128075; I&apos;m</p>
         <h1 className="text-8xl text-red-500 font-bold">Abdelhak Ajbouni</h1>
         <p className="text-xl text-gray-500">
           I&apos;m a <b>fullstack developer</b> based in Tunis, Tunisia.
