@@ -16,7 +16,6 @@ export default function TopBar({ }: Props) {
         <Link href="/#contact" passHref><Button className='mx-1' label="Contact" secondary /></Link>
         <a
           href="/files/resume-abdelhak-ajbouni.pdf"
-          alt="resume abdelhak ajbouni"
           target="_blank"
           rel="noopener noreferrer"
         >
