@@ -5,6 +5,7 @@ import Container from "src/components/layout/Container"
 import Intro from 'src/components/Intro'
 import About from 'src/components/About'
 import Contact from 'src/components/Contact'
+import Skills from 'src/components/Skills'
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,13 @@ const Home: NextPage = () => {
       <div className="bg-white">
         <Container className="px-4 py-16">
           <About />
+          <Skills />
+        </Container>
+      </div>
+
+      <div>
+        <Container>
+         
         </Container>
       </div>
 
