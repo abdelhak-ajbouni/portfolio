@@ -6,11 +6,9 @@ import { getRandomFloat } from 'src/utils/functions'
 
 export default function Scene() {
   return (
-    <div className='absolute top-0 bottom-0 right-0 left-0'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Stars />
-      </Canvas>
-    </div>
+    <Canvas camera={{ position: [0, 0, 1] }}>
+      <Stars />
+    </Canvas>
   )
 }
 
