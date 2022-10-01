@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "src/components/Intro.astro";
 import Stars from "src/islands/Stars";
 import About from "src/components/About.astro";
+import Contact from "src/islands/Contact"
 ---
 
 <Layout title="Abdelhak Ajbouni">
@@ -14,5 +15,6 @@ import About from "src/components/About.astro";
   </header>
   <main>
     <About />
+    <Contact client:load />
   </main>
 </Layout>
