@@ -1,10 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Intro from 'src/components/Intro.astro'
+import Layout from "../layouts/Layout.astro";
+import Intro from "src/components/Intro.astro";
+import Stars from "src/islands/Stars";
+import About from "src/components/About.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-      <Intro /> 
-	</main>
+<Layout title="Abdelhak Ajbouni">
+  <header
+    class="relative h-[calc(100vh-10rem)] bg-gradient-to-t from-slate-700 via-slate-800 to-slate-800"
+  >
+    <Intro />
+    <Stars client:only="react" />
+  </header>
+  <main>
+    <About />
+  </main>
 </Layout>
