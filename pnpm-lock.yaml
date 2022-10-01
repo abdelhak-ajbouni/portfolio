@@ -8,6 +8,7 @@ specifiers:
   '@astrojs/vercel': ^2.1.0
   '@react-three/drei': ^9.29.1
   '@react-three/fiber': ^8.7.3
+  '@types/nodemailer': ^6.4.6
   '@types/react': ^18.0.19
   '@types/react-dom': ^18.0.6
   '@types/three': ^0.144.0
@@ -40,6 +41,7 @@ dependencies:
   three: 0.144.0
 
 devDependencies:
+  '@types/nodemailer': 6.4.6
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
   '@types/three': 0.144.0
@@ -835,7 +837,12 @@ packages:
 
   /@types/node/17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
-    dev: false
+
+  /@types/nodemailer/6.4.6:
+    resolution: {integrity: sha512-pD6fL5GQtUKvD2WnPmg5bC2e8kWCAPDwMPmHe/ohQbW+Dy0EcHgZ2oCSuPlWNqk74LS5BVMig1SymQbFMPPK3w==}
+    dependencies:
+      '@types/node': 17.0.45
+    dev: true
 
   /@types/offscreencanvas/2019.7.0:
     resolution: {integrity: sha512-PGcyveRIpL1XIqK8eBsmRBt76eFgtzuPiSTyKHZxnGemp2yzGzWpjYKAfK3wIMiU7eH+851yEpiuP8JZerTmWg==}
