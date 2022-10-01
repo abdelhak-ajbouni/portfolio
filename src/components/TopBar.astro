@@ -4,25 +4,23 @@ import Container from "src/components/common/Container.astro";
 import Button from "src/components/common/Button.jsx";
 ---
 
-<div class="top-bar">
-  <Container className="flex justify-between my-4">
-    <Image src={"./favicon.svg"} height={40} width={40} alt="logo" />
-    <div class="flex justify-end">
-      <a href="/#about"><Button className="mx-1" label="About" secondary /></a>
-      {
-        /* <Link href="/#experience" passHref><Button className='mx-1' label="Experience" secondary /></Link>
+<Container className="top-bar flex justify-between py-4">
+  <Image src={"./favicon.svg"} height={40} width={40} alt="logo" />
+  <nav class="flex justify-end">
+    <a href="/#about"><Button className="mx-1" label="About" secondary /></a>
+    {
+      /* <Link href="/#experience" passHref><Button className='mx-1' label="Experience" secondary /></Link>
       <Link href="/#projects" passHref><Button className='mx-1' label="Projects" secondary /></Link> */
-      }
-      <a href="/#contact"
-        ><Button className="mx-1" label="Contact" secondary />
-      </a>
-      <a
-        href="/files/resume-abdelhak-ajbouni.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button className="ml-4" label="Resume" />
-      </a>
-    </div>
-  </Container>
-</div>
+    }
+    <a href="/#contact"
+      ><Button className="mx-1" label="Contact" secondary />
+    </a>
+    <a
+      href="/files/resume-abdelhak-ajbouni.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button className="ml-4" label="Resume" />
+    </a>
+  </nav>
+</Container>
