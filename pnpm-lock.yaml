@@ -22,7 +22,7 @@ specifiers:
   react-hook-form: ^7.36.1
   react-hot-toast: ^2.4.0
   react-query: ^3.39.2
-  tailwindcss: ^3.0.24
+  tailwindcss: ^3.2.4
   three: ^0.144.0
 
 dependencies:
@@ -33,7 +33,6 @@ dependencies:
   '@astrojs/vercel': 2.1.0
   '@react-three/drei': 9.29.1_67uyhnksjibsr7wxhrnlyuwcrm
   '@react-three/fiber': 8.7.3_ww22p6cticflcq7fk2rysgxj34
-  '@tailwindcss/container-queries': 0.1.0_tailwindcss@3.2.4
   astro: 1.2.1
   astro-icon: 0.7.3
   nodemailer: 6.8.0
@@ -42,15 +41,16 @@ dependencies:
   react-hook-form: 7.36.1_react@18.2.0
   react-hot-toast: 2.4.0_biqbaboplfbrettd7655fr4n2y
   react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
-  tailwindcss: 3.2.4
   three: 0.144.0
 
 devDependencies:
+  '@tailwindcss/container-queries': 0.1.0_tailwindcss@3.2.4
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@types/nodemailer': 6.4.6
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
   '@types/three': 0.144.0
+  tailwindcss: 3.2.4
 
 packages:
 
@@ -748,7 +748,7 @@ packages:
       tailwindcss: '>=3.2.0'
     dependencies:
       tailwindcss: 3.2.4
-    dev: false
+    dev: true
 
   /@tailwindcss/forms/0.5.3_tailwindcss@3.2.4:
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
