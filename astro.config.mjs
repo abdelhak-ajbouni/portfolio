@@ -10,6 +10,7 @@ export default defineConfig({
   output: 'server',
   vite: {
     ssr: {
+      noExternal: ["svgo"],
       external: ["svgo"]
     }
   },
