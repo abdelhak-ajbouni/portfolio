@@ -4,8 +4,8 @@ import { Image } from "@astrojs/image/components";
 import Container from "./common/Container.astro";
 ---
 
-<Container className="intro pt-24 pb-32 z-20">
-  <div id="about" class="flex">
+<Container>
+  <div id="about" class="flex pt-24 pb-16">
     <div class="w-1/6">
       <Image
         class="rounded-full"
@@ -15,21 +15,21 @@ import Container from "./common/Container.astro";
         height={250}
       />
     </div>
-    <div class="about-text w-5/6 mx-12 my-8">
-      <h2 class="text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 bg-clip-text text-transparent">Who I am</h2>
+    <div class="about-text w-5/6 mx-12">
+      <h2 class="text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Who I am</h2>
       <p class="text-xl text-gray-300">
         I have ~ 4 years of experience working with Javascript, Recently
         I&apos;ve been using and enjoying the
         {" "}<a
           href="https://twitter.com/benawad/status/1366076156374626305"
-          class="text-blue-500"
+          class="text-blue-600"
           >Hypebeast stack</a
         >{" "}
-        with <span class="text-white underline decoration-dashed decoration-blue-500">Nextjs</span> and <span
-          class="text-gray-100 underline decoration-dashed decoration-blue-500">Expressjs</span
+        with <span class="text-white underline decoration-dashed decoration-blue-600">Nextjs</span> and <span
+          class="text-gray-100 underline decoration-dashed decoration-blue-600">Expressjs</span
         > but I&apos;m also comfortable with a variety of frameworks and libraries
-        such as <span class="text-gray-100 underline decoration-dashed decoration-blue-500">gRPC</span> and <span
-          class="text-gray-100 underline decoration-dashed decoration-blue-500">Keycloak</span
+        such as <span class="text-gray-100 underline decoration-dashed decoration-blue-600">gRPC</span> and <span
+          class="text-gray-100 underline decoration-dashed decoration-blue-600">Keycloak</span
         >.
       </p>
       <p class="text-xl text-gray-300 mt-2">
@@ -38,4 +38,5 @@ import Container from "./common/Container.astro";
       </p>
     </div>
   </div>
+  <hr class="my-24"/>
 </Container>
