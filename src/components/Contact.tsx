@@ -49,7 +49,7 @@ export default function Contact({ }: Props) {
         </form>
         <div className='w-1/2 px-16'>
           <p className="text-xl text-gray-500 mb-2">
-            <b>phone:</b> +216 90 100 181
+            <b>phone:</b> +352 661 287509
           </p>
           <p className="text-xl text-gray-500 mb-2">
             <b>email:</b> abdelhak.ajbouni@gmail.com
