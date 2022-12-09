@@ -1,0 +1,42 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Container from "./common/Container.astro";
+---
+
+<Container>
+  <div id="about" class="flex pt-24 pb-16">
+    <div class="w-1/6">
+      <Image
+        class="rounded-full"
+        src="/images/avatar.jpeg"
+        alt="avatar"
+        width={250}
+        height={250}
+      />
+    </div>
+    <div class="about-text w-5/6 mx-12">
+      <h2 class="text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Who I am</h2>
+      <p class="text-xl text-gray-300">
+        I have ~ 4 years of experience working with Javascript, Recently
+        I&apos;ve been using and enjoying the
+        {" "}<a
+          href="https://twitter.com/benawad/status/1366076156374626305"
+          class="text-blue-600"
+          >Hypebeast stack</a
+        >{" "}
+        with <span class="text-white underline decoration-dashed decoration-blue-600">Nextjs</span> and <span
+          class="text-gray-100 underline decoration-dashed decoration-blue-600">Expressjs</span
+        > but I&apos;m also comfortable with a variety of frameworks and libraries
+        such as <span class="text-gray-100 underline decoration-dashed decoration-blue-600">gRPC</span> and <span
+          class="text-gray-100 underline decoration-dashed decoration-blue-600">Keycloak</span
+        >.
+      </p>
+      <p class="text-xl text-gray-300 mt-2">
+        Being hardworking and result oriented, I always work towards achieving
+        best result on each project I lay my hands on.
+      </p>
+    </div>
+  </div>
+  <hr class="my-24"/>
+</Container>

@@ -1,6 +1,6 @@
 export function sendEmail(params: Params) {
   return fetch(
-    "/api/email",
+    "/email.json",
     {
       headers: {
         'Accept': 'application/json',

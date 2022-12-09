@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon";
+import Container from 'src/components/common/Container.astro'
+import Connections from "src/components/Connections.astro";
+import Button from "src/components/common/Button";
+---
+
+<Container className="intro pt-24 pb-32 z-20 absolute top-0 bottom-0 right-0 left-0">
+  <p class="flex text-5xl text-white font-bold">
+    Hi!
+    <Icon
+      class="text-3xl w-12 mx-4"
+      name="twemoji:waving-hand"
+    />
+    I&apos;m
+  </p>
+  <h1 class="text-8xl font-bold inline-block bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 bg-clip-text text-transparent">Abdelhak Ajbouni</h1>
+  <p class="text-xl text-gray-300">
+    I&apos;m a <b class="font-bold">fullstack developer</b> based in Luxembourg.
+  </p>
+  <p class="text-xl text-gray-300">
+    I mostly use JavaScript but I&apos;m always ready to learn new technologies
+    and improve my skills.
+  </p>
+  <Connections />
+  <a href="/#contact"><Button className="my-6" label="Lets connect 🚀" /></a>
+</Container>
