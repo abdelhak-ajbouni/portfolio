@@ -1,14 +1,12 @@
 ---
-import { Image } from "@astrojs/image/components";
-
 import Container from "./common/Container.astro";
 ---
 
 <Container>
   <div id="about" class="flex pt-24 pb-16">
     <div class="w-1/6">
-      <Image
-        class="rounded-full"
+      <img
+        class="shadow-lg rounded-lg max-w-full h-auto align-middle border-4 border-gray-200"
         src="/images/avatar.jpeg"
         alt="avatar"
         width={250}
