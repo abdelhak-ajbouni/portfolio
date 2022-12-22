@@ -15,15 +15,4 @@ export default defineConfig({
     react(),
   ],
   adapter: vercel(),
-  vite: {
-    build: {
-      sourcemap: "inline",
-      rollupOptions: {
-        external: ['astro-icon']
-      },
-    },
-    ssr: {
-      external: ["svgo"],
-    },
-  },
 });
