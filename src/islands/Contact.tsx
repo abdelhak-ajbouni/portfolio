@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, BaseSyntheticEvent } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 
 // TODO: how to import astro files?
 // import Container from "src/components/common/Container.astro";
@@ -8,20 +9,27 @@ import toast, { Toaster } from 'react-hot-toast';
 import TextField from 'src/components/common/TextArea';
 import TextArea from 'src/components/common/TextArea';
 import Button from 'src/components/common/Button';
-import { sendEmail } from 'src/libs/apis';
+
+const { PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, PUBLIC_KEY } = import.meta.env
 
 export default function Contact({ }: Props) {
   const [loading, setLoading] = useState<boolean>(false)
   const { register, reset, clearErrors, handleSubmit, formState: { errors } } = useForm<FormInputs>();
+  // TODO: fix useRef type?
+  const contactForm = useRef<any>(null!);
 
-  const sendEmailMutation = async (data: FormInputs) => {
+  const sendEmail = async (e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    e?.preventDefault();
+
     setLoading(true)
-    await sendEmail(data).catch(error => toast.error('Oops! email wasn\'t sent.'))
+    await emailjs
+      .sendForm(PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, contactForm.current, PUBLIC_KEY)
+      .catch(error => toast.error('Oops! email wasn\'t sent.'))
     setLoading(false)
     reset()
     clearErrors(["name", "email", "message"])
     toast.success('Nice! I\'ll get back to you soon.');
-  }
+  };
 
   return (
     <div className="container">
@@ -30,7 +38,7 @@ export default function Contact({ }: Props) {
         <p className="text-l text-gray-300">Have an exciting project where you need some help? or maybe you just wanna talk!</p>
         <p className="text-l text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
         <div className='flex'>
-          <form className='w-2/3' onSubmit={handleSubmit((data) => sendEmailMutation(data))}>
+          <form className='w-2/3' ref={contactForm} onSubmit={handleSubmit((data, e) => sendEmail(e))}>
             <div className="relative">
               <TextField register={register} label="Name" required />
               {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your name?</p>}
