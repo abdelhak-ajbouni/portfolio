@@ -34,7 +34,7 @@ export default function Contact({ }: Props) {
   return (
     <div className="container">
       <div id="contact" className="mb-32">
-        <h2 className="text-5xl text-purple-600 font-bold ">Get in touch</h2>
+        <h2 className="text-5xl font-bold inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Get in touch</h2>
         <p className="text-l text-gray-300">Have an exciting project where you need some help? or maybe you just wanna talk!</p>
         <p className="text-l text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
         <div className='flex'>
