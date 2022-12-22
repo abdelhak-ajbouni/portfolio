@@ -17,10 +17,13 @@ export default defineConfig({
   adapter: vercel(),
   vite: {
     build: {
-      sourcemap: true,
+      sourcemap: "inline",
       rollupOptions: {
-        external: ['astro-icon', 'react', 'react-dom'],
+        external: ['astro-icon']
       },
-    }
+    },
+    ssr: {
+      external: ["svgo"],
+    },
   },
 });
