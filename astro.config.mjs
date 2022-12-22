@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
-import vercel from '@astrojs/vercel/edge';
+// import vercel from '@astrojs/vercel/edge';
+import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,8 +12,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     // TODO: fix skipped sitemap generation in build. error: No pages found! We can only detect sitemap routes for "static" builds
-    sitemap(),
-    react(),
-  ],
-  adapter: vercel(),
+    sitemap(), 
+    react()],
+  adapter: netlify()
 });
