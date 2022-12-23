@@ -1,13 +1,25 @@
 ---
 import Container from "src/components/common/Container.astro";
 import Divider from "src/components/common/Divider.astro";
+import Connections from "./Connections.astro";
 ---
 
 <footer class="mt-4">
   <Divider />
-  <Container className="py-2 md:py-4 flex justify-end">
-    <p class="text-sm md:text-base mx-2 text-gray-300">
-      built with <a class="text-purple-600" href="https://astro.build" target="_blank" >Astro</a>
+  <Container className="py-4 md:flex md:justify-end items-center">
+    <Connections />
+    <div class="flex">
+      <p class="text-xs md:text-sm md:mx-1 text-gray-300">Made By Abdelhak Ajbouni</p>
+      <p class="text-xs md:text-sm mx-1 text-gray-300">©{new Date().getFullYear()}</p>
+    </div>
+
+    <p class="text-xs md:text-sm md:mx-2 text-gray-300 hidden md:block">|</p>
+    <p class="text-xs md:text-sm md:mx-1 text-gray-300">
+      built with <a
+        class="text-pink-600"
+        href="https://astro.build"
+        target="_blank">Astro</a
+      >
     </p>
   </Container>
 </footer>
