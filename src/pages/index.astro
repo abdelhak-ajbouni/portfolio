@@ -4,6 +4,7 @@ import Intro from "src/components/Intro.astro";
 import Stars from "src/islands/Stars";
 import About from "src/components/About.astro";
 import Contact from "src/islands/Contact"
+import Footer from "src/components/Footer.astro";
 ---
 
 <Layout title="Abdelhak Ajbouni">
@@ -16,5 +17,6 @@ import Contact from "src/islands/Contact"
   <main>
     <About />
     <Contact client:only="react" />
+    <Footer />
   </main>
 </Layout>

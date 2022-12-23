@@ -60,10 +60,10 @@ export default function Contact({ }: Props) {
           </form>
           <div className='lg:w-1/3 lg:px-8 py-2 lg:py-0'>
             <p className="text-sm lg:text-xl text-gray-300 mb-1 lg:mb-2">
-              <b>phone:</b> +352 661 287 509
+              <b className="text-pink-600">phone:</b> +352 661 287 509
             </p>
             <p className="text-sm lg:text-xl text-gray-300 mb-1 lg:mb-2">
-              <b>email:</b> abdelhak.ajbouni@gmail.com
+              <b className="text-pink-600">email:</b> abdelhak.ajbouni@gmail.com
             </p>
             {/* <Connections /> */}
           </div>
