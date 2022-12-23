@@ -1,52 +1,78 @@
 ---
 import Container from "./common/Container.astro";
 import Divider from "./common/Divider.astro";
+
+const highlightedStyle = `text-white underline decoration-dashed decoration-pink-600`;
 ---
 
 <Container>
-  <div id="about" class="md:flex md:pt-16 md:pb-10 lg:pt-24 lg:pb-16">
-    <div class="w-1/2 md:w-1/6 mb-2">
-      <img
-        class="shadow-lg rounded-lg max-w-full h-auto align-middle border-4 border-gray-200"
-        src="/images/avatar.jpeg"
-        alt="avatar"
-        width={250}
-        height={250}
-      />
+  <div id="about" class="md:pt-16 md:pb-10 lg:pt-24 lg:pb-12">
+    <div class="md:flex md:mb-4">
+      <div class="w-1/3 md:w-2/6 lg:w-1/6 mb-2">
+        <img
+          class="shadow-lg rounded-lg max-w-full h-auto align-middle border-4 border-gray-200"
+          src="/images/avatar.jpeg"
+          alt="avatar"
+          width={250}
+          height={250}
+        />
+      </div>
+      <div class="md:w-4/6 lg:w-5/6 md:mx-8 lg:mx-12">
+        <h2
+          class="text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+        >
+          Who I am
+        </h2>
+        <p class="text-sm md:text-base lg:text-xl text-gray-300">
+          Full-stack JavaScript Developer with {new Date().getFullYear() - 2017} years of experience and a
+          background in data-driven applications and fintech.
+        </p>
+        <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
+          Being hardworking and result oriented, I always work towards achieving
+          the best result on each project I lay my hands on. I'm also a person
+          who adapts easily as I had the chance to work in different
+          environments from startups to big companies.
+        </p>
+      </div>
     </div>
-    <div class="about-text md:w-5/6 md:mx-8 lg:mx-12">
-      <h2
-        class="text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent"
-      >
-        Who I am
-      </h2>
-      <p class="text-sm md:text-base lg:text-xl text-gray-300">
-        I have ~ 4 years of experience working with Javascript, Recently
-        I&apos;ve been using and enjoying the
-        {" "}<a
-          href="https://twitter.com/benawad/status/1366076156374626305"
-          class="text-pink-600">Hypebeast stack</a
-        >{" "}
-        with <span
-          class="text-white underline decoration-dashed decoration-pink-600"
-          >Nextjs</span
-        > and <span
-          class="text-white underline decoration-dashed decoration-pink-600"
-          >Expressjs</span
-        > but I&apos;m also comfortable with a variety of frameworks and libraries
-        such as <span
-          class="text-white underline decoration-dashed decoration-pink-600"
-          >gRPC</span
-        > and <span
-          class="text-white underline decoration-dashed decoration-pink-600"
-          >Keycloak</span
-        >.
-      </p>
+
+    <div>
       <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
-        Being hardworking and result oriented, I always work towards achieving
-        best result on each project I lay my hands on.
+        for frontend, I've used
+        <span class={highlightedStyle}> React</span>
+        ,
+        <span class={highlightedStyle}> Nextjs</span>
+        , and
+        <span class={highlightedStyle}> Gatsby</span>
+        alongside Redux for state management, and Tailwind for styling. I have implemented
+        Cypress, Jest/@testing-library tests and I'm looking into adopting TDD.
       </p>
+
+      <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
+        for backend, I've been creating microservices using
+        <span class={highlightedStyle}>Nodejs</span>,
+        <span class={highlightedStyle}>Expressjs</span>, and
+        <span class={highlightedStyle}>Postgres</span>. I'm also comfortable
+        with a variety of frameworks and libraries such as gRPC and Keycloak.
+        and started learning to build projects with event-driven architecture
+        with the help of Rabbitmq.
+      </p>
+
+      <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
+        at the moment I'm focused on improving my TypeScript skills. it's hard
+        to deny that TS is the future. some of the tools I'm checking are tRPC,
+        zod and prisma.
+      </p>
+      <a
+        class="text-sm md:text-base lg:text-xl text-pink-600 mt-2 inline-block underline"
+        href="/files/resume-abdelhak-ajbouni.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        My Resume (PDF)
+      </a>
+      <!-- download icon -->
     </div>
   </div>
-  <Divider className="my-8 md:my-12 lg:my-24" />
 </Container>
+<Divider className="my-8 md:my-10 lg:my-12" />
