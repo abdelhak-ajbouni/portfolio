@@ -3,23 +3,23 @@ import Container from "src/components/common/Container.astro";
 import Button from "src/components/common/Button.jsx";
 ---
 
-<Container className="top-bar flex justify-between py-4">
-  <img src={"/favicon.svg"} height={40} width={40} alt="logo" />
+<Container className="top-bar flex justify-between items-center py-2 md:py-4">
+  <img class="w-8 h-8 md:w-10 md:h-10 align-middle" src={"/favicon.svg"} height={40} width={40} alt="logo" />
   <nav class="flex justify-end">
-    <a href="/#about"><Button className="mx-1" label="About" secondary /></a>
+    <a href="/#about"><Button className="md:mx-1" label="About" secondary /></a>
     {
       /* <Link href="/#experience" passHref><Button className='mx-1' label="Experience" secondary /></Link>
       <Link href="/#projects" passHref><Button className='mx-1' label="Projects" secondary /></Link> */
     }
     <a href="/#contact"
-      ><Button className="mx-1" label="Contact" secondary />
+      ><Button className="md:mx-1" label="Contact" secondary />
     </a>
     <a
       href="/files/resume-abdelhak-ajbouni.pdf"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Button className="ml-4" label="Resume" />
+      <Button className="ml-2 md:ml-4" label="Resume" />
     </a>
   </nav>
 </Container>

@@ -3,8 +3,8 @@ import Container from "./common/Container.astro";
 ---
 
 <Container>
-  <div id="about" class="flex pt-24 pb-16">
-    <div class="w-1/6">
+  <div id="about" class="md:flex md:pt-16 md:pb-10 lg:pt-24 lg:pb-16">
+    <div class="w-1/2 md:w-1/6 mb-2">
       <img
         class="shadow-lg rounded-lg max-w-full h-auto align-middle border-4 border-gray-200"
         src="/images/avatar.jpeg"
@@ -13,28 +13,39 @@ import Container from "./common/Container.astro";
         height={250}
       />
     </div>
-    <div class="about-text w-5/6 mx-12">
-      <h2 class="text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Who I am</h2>
-      <p class="text-xl text-gray-300">
+    <div class="about-text md:w-5/6 md:mx-8 lg:mx-12">
+      <h2
+        class="text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+      >
+        Who I am
+      </h2>
+      <p class="text-sm md:text-base lg:text-xl text-gray-300">
         I have ~ 4 years of experience working with Javascript, Recently
         I&apos;ve been using and enjoying the
         {" "}<a
           href="https://twitter.com/benawad/status/1366076156374626305"
-          class="text-pink-600"
-          >Hypebeast stack</a
+          class="text-pink-400">Hypebeast stack</a
         >{" "}
-        with <span class="text-white underline decoration-dashed decoration-pink-600">Nextjs</span> and <span
-          class="text-gray-100 underline decoration-dashed decoration-pink-600">Expressjs</span
+        with <span
+          class="text-white underline decoration-dashed decoration-pink-600"
+          >Nextjs</span
+        > and <span
+          class="text-white underline decoration-dashed decoration-pink-600"
+          >Expressjs</span
         > but I&apos;m also comfortable with a variety of frameworks and libraries
-        such as <span class="text-gray-100 underline decoration-dashed decoration-pink-600">gRPC</span> and <span
-          class="text-gray-100 underline decoration-dashed decoration-pink-600">Keycloak</span
+        such as <span
+          class="text-white underline decoration-dashed decoration-pink-600"
+          >gRPC</span
+        > and <span
+          class="text-white underline decoration-dashed decoration-pink-600"
+          >Keycloak</span
         >.
       </p>
-      <p class="text-xl text-gray-300 mt-2">
+      <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
         Being hardworking and result oriented, I always work towards achieving
         best result on each project I lay my hands on.
       </p>
     </div>
   </div>
-  <hr class="my-24"/>
+  <hr class="my-8 md:my-12 lg:my-24" />
 </Container>

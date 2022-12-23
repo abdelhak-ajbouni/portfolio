@@ -33,12 +33,12 @@ export default function Contact({ }: Props) {
 
   return (
     <div className="container">
-      <div id="contact" className="mb-32">
-        <h2 className="text-5xl font-bold inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Get in touch</h2>
-        <p className="text-l text-gray-300">Have an exciting project where you need some help? or maybe you just wanna talk!</p>
-        <p className="text-l text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
-        <div className='flex'>
-          <form className='w-2/3' ref={contactForm} onSubmit={handleSubmit((data, e) => sendEmail(e))}>
+      <div id="contact" className="lg:mb-32">
+        <h2 className="text-xl md:text-3xl lg:text-5xl font-bold inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Get in touch</h2>
+        <p className="text-sm md:text-base text-gray-300">Have an exciting project where you need some help? or maybe you just wanna talk!</p>
+        <p className="text-sm md:text-base text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
+        <div className='lg:flex'>
+          <form className='lg:w-2/3' ref={contactForm} onSubmit={handleSubmit((data, e) => sendEmail(e))}>
             <div className="relative">
               <TextField register={register} label="Name" required />
               {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your name?</p>}
@@ -58,11 +58,11 @@ export default function Contact({ }: Props) {
               loading={loading}
             />
           </form>
-          <div className='w-1/3 px-8'>
-            <p className="text-xl text-gray-300 mb-2">
-              <b>phone:</b> +352 661 287509
+          <div className='lg:w-1/3 lg:px-8 py-2 lg:py-0'>
+            <p className="text-sm lg:text-xl text-gray-300 mb-1 lg:mb-2">
+              <b>phone:</b> +352 661 287 509
             </p>
-            <p className="text-xl text-gray-300 mb-2">
+            <p className="text-sm lg:text-xl text-gray-300 mb-1 lg:mb-2">
               <b>email:</b> abdelhak.ajbouni@gmail.com
             </p>
             {/* <Connections /> */}

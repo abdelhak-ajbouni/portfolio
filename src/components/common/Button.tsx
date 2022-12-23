@@ -16,9 +16,10 @@ export default function Button({ className, label, type, loading, disabled, seco
   const getClassNames = `
     button
     ${className}
-    ${secondary ? "text-gray-200 underline-offset-2 decoration-2 hover:underline" : "text-white bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 hover:bg-green-700"}
+    ${secondary ? "text-gray-200 underline-offset-2 decoration-2 hover:underline" : "text-white bg-purple-700 hover:bg-purple-600"}
     ${loading ? "loading" : ""}
-    font-bold py-2 px-4 rounded
+    font-bold py-2 px-2 md:px-4 rounded
+    text-sm md:text-base
   `;
 
   return (
