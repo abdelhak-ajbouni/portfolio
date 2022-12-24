@@ -1,0 +1,75 @@
+---
+import Container from "./common/Container.astro";
+import Divider from "./common/Divider.astro";
+
+const projects: any[] = [
+  {
+    title: "Bessis Pro",
+    description:
+      "E-commerce website for Bessis Pro, a company that sells eco-friendly clothing.",
+    url: "https://www.bessis-pro.com",
+    callToAction: "Visit",
+  },
+  {
+    title: "Simple Pokemon Game",
+    description:
+      "A simple Pokemon game built with PokeAPI where you can catch Pokemon and battle them.",
+    url: "https://pokemon.abdelhak-ajbouni.com",
+    callToAction: "Play",
+  },
+  {
+    title: "My Portfolio",
+    description:
+      "This website is built with Astro and TailwindCSS. It's a static website that is hosted on Netlify",
+    url: "https://github.com/abdelhak-ajbouni/portfolio",
+    callToAction: "Check it out",
+  },
+];
+---
+
+<Container className="pt-2 pb-4 md:pt-6 md:pb-8">
+  <h2
+    class="text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+  >
+    Things I've Built
+  </h2>
+  <p class="text-sm md:text-base lg:text-xl text-gray-300 mb-4">
+    Here are some of the things I've built. I'm always working on new projects,
+    so check back often!
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      projects.map((project) => (
+        <div class="border-4 border-gray-300 rounded-lg shadow-lg p-4">
+          <h3 class="text-xl font-bold mb-2">
+            <a
+              class="text-base md:text-lg lg:text-2xl text-pink-600 hover:text-pink-500"
+              href={project.url}
+              target="_blank"
+            >
+              {project.title}
+            </a>
+          </h3>
+          <p class="text-gray-300 text-xs sm:text-sm mb-4">
+            {project.description}
+          </p>
+          <a
+            class="text-xs md:text-base text-pink-600 hover:text-pink-500"
+            href={project.url}
+            target="_blank"
+          >
+            {project.callToAction} &gt;
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <a
+    class="text-sm md:text-base lg:text-xl text-pink-600 mt-4 md:mt-6 inline-block underline"
+    href="https://github.com/abdelhak-ajbouni?tab=repositories"
+    target="_blank"
+  >
+    check my github
+  </a>
+</Container>
+<Divider className="my-8 md:my-10 lg:my-12" />
