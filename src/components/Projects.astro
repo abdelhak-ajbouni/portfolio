@@ -1,21 +1,42 @@
 ---
+import { Icon } from "astro-icon";
+
 import Container from "./common/Container.astro";
 import Divider from "./common/Divider.astro";
 
-const projects: any[] = [
+type Project = {
+  title: string;
+  description: string;
+  url: string;
+  callToAction: string;
+  technologies?: string[];
+};
+
+const projects: Project[] = [
   {
     title: "Bessis Pro",
     description:
       "E-commerce website for Bessis Pro, a company that sells eco-friendly clothing.",
     url: "https://www.bessis-pro.com",
     callToAction: "Visit",
+    technologies: [
+      "mdi:gatsby",
+      "mdi:tailwind",
+      "mdi:wordpress",
+      "mdi:graphql",
+    ],
   },
   {
-    title: "Simple Pokemon Game",
+    title: "Pokemon Game",
     description:
       "A simple Pokemon game built with PokeAPI where you can catch Pokemon and battle them.",
     url: "https://pokemon.abdelhak-ajbouni.com",
     callToAction: "Play",
+    technologies: [
+      "akar-icons:nextjs-fill",
+      "mdi:tailwind",
+      "akar-icons:redux-fill",
+    ],
   },
   {
     title: "My Portfolio",
@@ -23,6 +44,7 @@ const projects: any[] = [
       "This website is built with Astro and TailwindCSS. It's a static website that is hosted on Netlify",
     url: "https://github.com/abdelhak-ajbouni/portfolio",
     callToAction: "Check it out",
+    technologies: ["simple-icons:astro", "mdi:tailwind", "mdi:react", "cib:netlify"],
   },
 ];
 ---
@@ -53,13 +75,27 @@ const projects: any[] = [
           <p class="text-gray-300 text-xs sm:text-sm mb-4">
             {project.description}
           </p>
-          <a
-            class="text-xs md:text-base text-pink-600 hover:text-pink-500"
-            href={project.url}
-            target="_blank"
-          >
-            {project.callToAction} &gt;
-          </a>
+          <div class="flex items-center justify-between">
+            <a
+              class="text-xs md:text-base text-pink-600 hover:text-pink-500"
+              href={project.url}
+              target="_blank"
+            >
+              {project.callToAction} &gt;
+            </a>
+            {project.technologies && (
+              <div class="flex items-center">
+                {project.technologies.map((technology) => (
+                  <Icon
+                    class="text-gray-300"
+                    name={technology}
+                    width="30"
+                    height="30"
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       ))
     }
