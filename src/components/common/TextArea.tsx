@@ -1,4 +1,4 @@
-import { toCamelCase } from 'src/libs/functions';
+import { toCamelCase } from 'src/utils/functions';
 
 export default function TextArea({ label, placeholder, required, rows, register }: Props) {
   return <textarea
