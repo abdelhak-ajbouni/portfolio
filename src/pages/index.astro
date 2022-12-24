@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "src/components/Intro.astro";
 import Stars from "src/islands/Stars";
 import About from "src/components/About.astro";
-import Contact from "src/islands/Contact"
+import Projects from "src/components/Projects.astro";
+import Contact from "src/islands/Contact";
 import Footer from "src/components/Footer.astro";
 ---
 
@@ -16,7 +17,10 @@ import Footer from "src/components/Footer.astro";
   </header>
   <main>
     <About />
+    <Projects />
     <Contact client:only="react" />
-    <Footer />
   </main>
+  <footer class="mt-4 md:mt-8">
+    <Footer />
+  </footer>
 </Layout>
