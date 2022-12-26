@@ -39,13 +39,15 @@ export default function Contact({ }: Props) {
         <p className="text-sm md:text-base lg:text-xl text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
         <div className='lg:flex'>
           <form className='lg:w-2/3' ref={contactForm} onSubmit={handleSubmit((data, e) => sendEmail(e))}>
-            <div className="relative">
-              <TextField register={register} label="Name" required />
-              {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your name?</p>}
-            </div>
-            <div className="relative">
-              <TextField register={register} label="Email" required />
-              {errors.email?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your email?</p>}
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+              <div className="relative">
+                <TextField register={register} label="Name" required />
+                {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your name?</p>}
+              </div>
+              <div className="relative">
+                <TextField register={register} label="Email" required />
+                {errors.email?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your email?</p>}
+              </div>
             </div>
             <div className="relative">
               <TextArea register={register} label="Message" required rows={5} />
