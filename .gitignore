@@ -2,6 +2,9 @@
 dist/
 .output/
 .vercel/
+.next/
+.nuxt/
+.netlify/
 
 # dependencies
 node_modules/
