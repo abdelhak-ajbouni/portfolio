@@ -3,6 +3,13 @@ import Container from "./common/Container.astro";
 import Divider from "./common/Divider.astro";
 
 const highlightedStyle = `text-white underline decoration-dashed decoration-pink-600`;
+const getDiffOfYears = () => {
+  const start = new Date(2017, 10, 1).getTime();
+  const now = new Date().getTime();
+  const diffInMs = Math.abs(start - now);
+  return Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 365));
+};
+
 ---
 
 <Container className="pt-2 pb-4 md:pt-6 md:pb-8">
@@ -24,7 +31,7 @@ const highlightedStyle = `text-white underline decoration-dashed decoration-pink
           Who I am
         </h2>
         <p class="text-sm md:text-base lg:text-xl text-gray-300">
-          Full-stack JavaScript Developer with {new Date().getFullYear() - 2017}
+          Full-stack JavaScript Developer with {getDiffOfYears()}
           years of experience and a background in data-driven applications and fintech.
         </p>
         <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
