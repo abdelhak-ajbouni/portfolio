@@ -12,17 +12,6 @@ const id = "G-EL8M9BZFR5";
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth font-mono">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EL8M9BZFR5"
-    ></script>
-    <script is:inline define:vars={{ id }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", id);
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -41,5 +30,21 @@ const id = "G-EL8M9BZFR5";
   <body class="bg-slate-700">
     <TopBar />
     <slot />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      defer
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EL8M9BZFR5"
+    ></script>
+    <script type="text/partytown" defer is:inline define:vars={{ id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", id);
+    </script>
   </body>
 </html>

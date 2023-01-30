@@ -1,21 +1,24 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
+import sitemap from "@astrojs/sitemap";
 import netlify from "@astrojs/netlify/functions";
+
+const url = 'https://abdelhak-ajbouni.com'
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  site: 'https://abdelhak-ajbouni.com',
+  site: url,
   integrations: [
+    react(),
     tailwind(),
+    partytown(),
     sitemap({
-      customPages: [
-        'https://abdelhak-ajbouni.com', // homepage
-      ],
-      lastmod: new Date("2022-12-26"),
+      customPages: [url],
+      lastmod: new Date("2022-12-26")
     }),
-    react()],
+  ],
   adapter: netlify()
 });
