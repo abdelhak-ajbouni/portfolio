@@ -16,12 +16,12 @@ import Footer from "src/components/Footer.astro";
     ]}
   >
     <Intro />
-    <Stars client:only="react" />
+    <Stars client:idle />
   </header>
   <main>
     <About />
     <Projects />
-    <Contact client:only="react" />
+    <Contact client:idle />
   </main>
   <footer class="mt-4 md:mt-8">
     <Footer />
