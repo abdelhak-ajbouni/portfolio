@@ -19,7 +19,7 @@
     "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.29.1",
     "@react-three/fiber": "^8.7.3",
-    "astro": "^2.0.2",
+    "astro": "^1.2.1",
     "astro-icon": "^0.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
