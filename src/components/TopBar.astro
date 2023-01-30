@@ -1,10 +1,11 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Container from "src/components/common/Container.astro";
 import Button from "src/components/common/Button.jsx";
 ---
 
 <Container className="top-bar flex justify-between items-center py-2 md:py-4">
-  <img class="w-8 h-8 md:w-10 md:h-10 cursor-pointer" src={"/favicon.svg"} height={40} width={40} alt="logo" />
+  <Image class="w-8 h-8 md:w-10 md:h-10 cursor-pointer" src={"/favicon.svg"} height={40} width={40} alt="logo" />
   <nav class="flex justify-end">
     <a href="/#about"><Button className="md:mx-1" label="About" secondary /></a>
     {
