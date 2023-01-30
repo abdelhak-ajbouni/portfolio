@@ -2,5 +2,10 @@
 const { className } = Astro.props;
 ---
 
-<div class={"h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent" + " " + className}></div>
-
+<div
+  class:list={[
+    "h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent",
+    className,
+  ]}
+>
+</div>

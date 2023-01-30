@@ -10,7 +10,10 @@ import Footer from "src/components/Footer.astro";
 
 <Layout title="Abdelhak Ajbouni Portfolio - Fullstack JavaScript Developer">
   <header
-    class="relative h-[calc(100vh-10rem)] bg-gradient-to-t from-slate-700 via-slate-800 to-slate-800"
+    class:list={[
+      "relative h-[calc(100vh-10rem)]",
+      "bg-gradient-to-t from-slate-700 via-slate-800 to-slate-800",
+    ]}
   >
     <Intro />
     <Stars client:only="react" />

@@ -44,14 +44,22 @@ const projects: Project[] = [
       "This website is built with Astro and TailwindCSS. It's a static website that is hosted on Netlify",
     url: "https://github.com/abdelhak-ajbouni/portfolio",
     callToAction: "Check it out",
-    technologies: ["simple-icons:astro", "mdi:tailwind", "mdi:react", "cib:netlify"],
+    technologies: [
+      "simple-icons:astro",
+      "mdi:tailwind",
+      "mdi:react",
+      "cib:netlify",
+    ],
   },
 ];
 ---
 
 <Container className="pt-2 pb-4 md:pt-6 md:pb-8">
   <h2
-    class="text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent"
+    class:list={[
+      "text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block",
+      "bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent",
+    ]}
   >
     Things I've Built
   </h2>
@@ -105,7 +113,7 @@ const projects: Project[] = [
     href="https://github.com/abdelhak-ajbouni?tab=repositories"
     target="_blank"
   >
-  Check my Github
+    Check my Github
   </a>
 </Container>
 <Divider className="my-8 md:my-10 lg:my-12" />
