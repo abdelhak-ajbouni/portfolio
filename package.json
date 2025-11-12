@@ -2,6 +2,10 @@
   "name": "abdelhak ajbouni portfolio",
   "version": "0.0.3",
   "private": true,
+  "engines": {
+    "node": ">=20.3.0",
+    "pnpm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
