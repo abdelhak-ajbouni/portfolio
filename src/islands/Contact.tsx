@@ -1,4 +1,4 @@
-import { useState, useRef, BaseSyntheticEvent } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
@@ -6,29 +6,45 @@ import emailjs from '@emailjs/browser';
 // TODO: how to import astro files?
 // import Container from "src/components/common/Container.astro";
 // import Connections from "./Connections.astro";
-import TextField from 'src/components/common/TextArea';
+import TextField from 'src/components/common/TextField';
 import TextArea from 'src/components/common/TextArea';
 import Button from 'src/components/common/Button';
 
 const { PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, PUBLIC_KEY } = import.meta.env
 
+type FormInputs = {
+  name: string;
+  email: string;
+  message: string;
+}
+
+type Props = {}
+
 export default function Contact({ }: Props) {
   const [loading, setLoading] = useState<boolean>(false)
   const { register, reset, clearErrors, handleSubmit, formState: { errors } } = useForm<FormInputs>();
-  // TODO: fix useRef type?
-  const contactForm = useRef<any>(null!);
+  const contactForm = useRef<HTMLFormElement>(null);
 
-  const sendEmail = async (e: BaseSyntheticEvent<object, any, any> | undefined) => {
+  const sendEmail = async (e?: any) => {
     e?.preventDefault();
 
+    if (!contactForm.current) {
+      toast.error('Form reference not found');
+      return;
+    }
+
     setLoading(true)
-    await emailjs
-      .sendForm(PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, contactForm.current, PUBLIC_KEY)
-      .catch(error => toast.error('Oops! email wasn\'t sent.'))
-    setLoading(false)
-    reset()
-    clearErrors(["name", "email", "message"])
-    toast.success('Nice! I\'ll get back to you soon.');
+    try {
+      await emailjs.sendForm(PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, contactForm.current, PUBLIC_KEY);
+      reset();
+      clearErrors(["name", "email", "message"]);
+      toast.success('Nice! I\'ll get back to you soon.');
+    } catch (error) {
+      console.error('Email send error:', error);
+      toast.error('Oops! email wasn\'t sent.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -42,16 +58,16 @@ export default function Contact({ }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
               <div className="relative">
                 <TextField register={register} label="Name" required />
-                {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your name?</p>}
+                {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your name?</p>}
               </div>
               <div className="relative">
                 <TextField register={register} label="Email" required />
-                {errors.email?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your email?</p>}
+                {errors.email?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your email?</p>}
               </div>
             </div>
             <div className="relative">
               <TextArea register={register} label="Message" required rows={5} />
-              {errors.message?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">Whats your message?</p>}
+              {errors.message?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your message?</p>}
             </div>
 
             <Button
@@ -75,11 +91,3 @@ export default function Contact({ }: Props) {
     </div>
   );
 }
-
-type FormInputs = {
-  name: string;
-  email: string;
-  message: string;
-}
-
-type Props = {}
