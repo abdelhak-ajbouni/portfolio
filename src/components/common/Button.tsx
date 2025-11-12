@@ -11,7 +11,16 @@ type Props = {
   children?: ReactNode;
 }
 
-export default function Button({ className, label, type, loading, disabled, secondary, onClick, children }: Props) {
+export default function Button({
+  className = "",
+  label = '',
+  type = 'submit',
+  loading = false,
+  disabled = false,
+  secondary = false,
+  onClick = () => { },
+  children = null
+}: Props) {
 
   const getClassNames = `
     button
@@ -32,16 +41,5 @@ export default function Button({ className, label, type, loading, disabled, seco
       {loading ? 'Loading...' : children || label}
     </button>
   );
-}
-
-Button.defaultProps = {
-  className: "",
-  label: '',
-  type: 'submit',
-  loading: false,
-  disabled: false,
-  secondary: false,
-  onClick: () => { },
-  children: null,
 }
 

@@ -45,5 +45,18 @@ const id = "G-EL8M9BZFR5";
       gtag("js", new Date());
       gtag("config", id);
     </script>
+
+    <!-- Fix Partytown iframe accessibility -->
+    <script is:inline>
+      // Add title attribute to Partytown iframe for accessibility
+      const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe[src*="partytown"]');
+        if (iframe && !iframe.hasAttribute('title')) {
+          iframe.setAttribute('title', 'Partytown Web Worker for Analytics');
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    </script>
   </body>
 </html>

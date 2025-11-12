@@ -23,6 +23,7 @@ export default function TextArea({
       placeholder={placeholder || label}
       aria-label={label}
       rows={rows}
+      name={toCamelCase(label)}
       {...register(toCamelCase(label), { required })}
     />
   );

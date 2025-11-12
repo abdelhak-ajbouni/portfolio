@@ -17,7 +17,8 @@ export default defineConfig({
     tailwind(),
     partytown({
       config: {
-        forward: ["dataLayer.push"]
+        forward: ["dataLayer.push"],
+        mainWindowAccessors: ["dataLayer"]
       }
     }),
     sitemap({
