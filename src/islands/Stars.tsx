@@ -1,31 +1,36 @@
-import { useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Points, PointMaterial } from '@react-three/drei'
-import type * as three from 'three'
-import { getRandomFloat } from 'src/utils/functions'
+import { Suspense, lazy } from 'react'
 
-export default function Scene() {
+// Loading fallback component
+function StarsLoading() {
   return (
-    <Canvas camera={{ position: [0, 0, 1] }}>
-      <Stars />
-    </Canvas>
+    <div className="absolute inset-0 bg-gradient-to-t from-slate-700 via-slate-800 to-slate-800">
+      <div className="absolute inset-0 opacity-20">
+        {/* Simple CSS stars fallback */}
+        <div className="animate-pulse">
+          {Array.from({ length: 50 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-pink-300 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
-function Stars(props: any) {
-  const ref = useRef<three.Mesh>(null!)
-  const dots = new Float32Array(1000).map(() => getRandomFloat(-1, 1, 8))
+// Dynamically import the Three.js scene
+const ThreeScene = lazy(() => import('./ThreeScene'))
 
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 40
-    ref.current.rotation.y -= delta / 60
-  })
-
+export default function Scene() {
   return (
-    <group rotation={[0, 0, -1]}>
-      <Points ref={ref} positions={dots} stride={3} frustumCulled={false} {...props}>
-        <PointMaterial transparent color="#ffa0e0" size={0.005} sizeAttenuation={true} depthWrite={false} />
-      </Points>
-    </group>
+    <Suspense fallback={<StarsLoading />}>
+      <ThreeScene />
+    </Suspense>
   )
 }

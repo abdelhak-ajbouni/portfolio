@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Container from "./common/Container.astro";
 import Divider from "./common/Divider.astro";
 
@@ -46,13 +46,12 @@ const getDiffOfYears = () => {
     <div>
       <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
         for frontend, I've used
-        <span class={highlightedStyle}> React</span>
-        ,
-        <span class={highlightedStyle}> Nextjs</span>
-        , and
+        <span class={highlightedStyle}> React</span>,
+        <span class={highlightedStyle}> Nextjs</span>,
+        <span class={highlightedStyle}> Astro</span>, and
         <span class={highlightedStyle}> Gatsby</span>
-        alongside Redux for state management, and Tailwind for styling. I have implemented
-        Cypress, Jest/@testing-library tests and I'm looking into adopting TDD.
+        alongside Tailwind for styling. I have implemented
+        Cypress, Playwright, and Jest/@testing-library tests.
       </p>
 
       <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
@@ -61,15 +60,9 @@ const getDiffOfYears = () => {
         <span class={highlightedStyle}>Expressjs</span>, and
         <span class={highlightedStyle}>Postgres</span>. I'm also comfortable
         with a variety of frameworks and libraries such as gRPC and Keycloak.
-        and started learning to build projects with event-driven architecture
-        with the help of Rabbitmq.
+        and for side projects I've used convex and supabase.
       </p>
 
-      <p class="text-sm md:text-base lg:text-xl text-gray-300 mt-2">
-        at the moment I'm focused on improving my TypeScript skills. it's hard
-        to deny that TS is the future. some of the tools I'm checking are tRPC,
-        zod and prisma.
-      </p>
       <a
         class="text-sm md:text-base lg:text-xl text-pink-600 mt-2 inline-block underline"
         href="/files/resume-abdelhak-ajbouni.pdf"
