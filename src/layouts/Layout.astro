@@ -6,6 +6,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const url = 'https://abdelhak-ajbouni.com';
 const id = "G-EL8M9BZFR5";
 ---
 
@@ -25,6 +26,13 @@ const id = "G-EL8M9BZFR5";
       name="google-site-verification"
       content="JMmrRR7yjGerSDAcdTftzDRJohfk6t9fcc-ljfJbHqM"
     />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Personal website of Abdelhak Ajbouni. Fullstack JavaScript/TypeScript Developer." />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Personal website of Abdelhak Ajbouni. Fullstack JavaScript/TypeScript Developer." />
     <title>{title}</title>
   </head>
   <body class="bg-slate-700">

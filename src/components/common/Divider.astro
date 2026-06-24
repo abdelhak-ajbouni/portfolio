@@ -2,10 +2,8 @@
 const { className } = Astro.props;
 ---
 
-<div
+<hr aria-hidden="true"
   class:list={[
-    "h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent",
+    "h-[1px] border-0 bg-gradient-to-r from-transparent via-gray-500 to-transparent",
     className,
-  ]}
->
-</div>
+  ]} />

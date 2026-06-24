@@ -27,10 +27,7 @@ export default defineConfig({
     }),
     icon({
       include: {
-        mdi: ["linkedin", "github", "gatsby", "tailwind", "wordpress", "graphql", "react", "hand-wave", "web", "apple"],
-        "akar-icons": ["nextjs-fill", "redux-fill"],
-        "simple-icons": ["astro"],
-        "cib": ["netlify"],
+        mdi: ["linkedin", "github", "hand-wave"],
       },
     })
   ],
@@ -39,14 +36,13 @@ export default defineConfig({
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'three': ['three'],
-            'react-three-fiber': ['@react-three/fiber'],
-            'react-three-drei': ['@react-three/drei'],
+          manualChunks(id) {
+            if (id.includes('node_modules/three/')) return 'three';
+            if (id.includes('@react-three/fiber')) return 'react-three-fiber';
+            if (id.includes('@react-three/drei')) return 'react-three-drei';
           }
         }
-      },
-      chunkSizeWarningLimit: 1000, // Increase limit to 1MB
+      }
     }
   }
 });

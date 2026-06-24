@@ -57,14 +57,14 @@ Get these from [EmailJS Dashboard](https://www.emailjs.com/)
 npm run dev
 ```
 
-Visit `http://localhost:3000` to see your site.
+Visit `http://localhost:4321` to see your site.
 
 ## 🧞 Commands
 
 | Command                | Action                                             |
 | :--------------------- | :------------------------------------------------- |
 | `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run dev`          | Starts local dev server at `localhost:4321`        |
 | `npm run build`        | Build your production site to `./dist/`            |
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |

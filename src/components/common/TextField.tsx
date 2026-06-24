@@ -1,4 +1,3 @@
-import React from 'react';
 import type { UseFormRegister, FieldValues } from 'react-hook-form';
 import { toCamelCase } from 'src/utils/functions';
 

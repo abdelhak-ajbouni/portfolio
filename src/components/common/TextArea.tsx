@@ -1,4 +1,3 @@
-import React from 'react';
 import type { UseFormRegister, FieldValues } from 'react-hook-form';
 import { toCamelCase } from 'src/utils/functions';
 
@@ -23,7 +22,6 @@ export default function TextArea({
       placeholder={placeholder || label}
       aria-label={label}
       rows={rows}
-      name={toCamelCase(label)}
       {...register(toCamelCase(label), { required })}
     />
   );

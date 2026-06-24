@@ -3,9 +3,6 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
 
-// TODO: how to import astro files?
-// import Container from "src/components/common/Container.astro";
-// import Connections from "./Connections.astro";
 import TextField from 'src/components/common/TextField';
 import TextArea from 'src/components/common/TextArea';
 import Button from 'src/components/common/Button';
@@ -25,9 +22,7 @@ export default function Contact({ }: Props) {
   const { register, reset, clearErrors, handleSubmit, formState: { errors } } = useForm<FormInputs>();
   const contactForm = useRef<HTMLFormElement>(null);
 
-  const sendEmail = async (e?: any) => {
-    e?.preventDefault();
-
+  const sendEmail = async (e?: React.FormEvent<HTMLFormElement>) => {
     if (!contactForm.current) {
       toast.error('Form reference not found');
       return;
@@ -83,7 +78,6 @@ export default function Contact({ }: Props) {
             <p className="text-sm lg:text-lg text-gray-300 mb-1 lg:mb-2">
               <b className="text-pink-600">email:</b> abdelhak.ajbouni@gmail.com
             </p>
-            {/* <Connections /> */}
           </div>
         </div>
         <Toaster position="bottom-center" />

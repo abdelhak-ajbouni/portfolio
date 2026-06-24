@@ -26,7 +26,7 @@ function Stars(props: any) {
 
 export default function ThreeScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 1] }}>
+    <Canvas aria-hidden="true" camera={{ position: [0, 0, 1] }}>
       <Stars />
     </Canvas>
   )
