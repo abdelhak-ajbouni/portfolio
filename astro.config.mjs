@@ -27,7 +27,7 @@ export default defineConfig({
     }),
     icon({
       include: {
-        mdi: ["linkedin", "github", "gatsby", "tailwind", "wordpress", "graphql", "react", "hand-wave"],
+        mdi: ["linkedin", "github", "gatsby", "tailwind", "wordpress", "graphql", "react", "hand-wave", "web", "apple"],
         "akar-icons": ["nextjs-fill", "redux-fill"],
         "simple-icons": ["astro"],
         "cib": ["netlify"],

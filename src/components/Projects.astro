@@ -14,42 +14,18 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Bessis Pro",
+    title: "IconCombo",
     description:
-      "E-commerce website for Bessis Pro, a company that sells eco-friendly clothing.",
-    url: "https://www.bessis-pro.com",
-    callToAction: "Visit",
-    technologies: [
-      "mdi:gatsby",
-      "mdi:tailwind",
-      "mdi:wordpress",
-      "mdi:graphql",
-    ],
+      "App icon generator for iOS and Android that makes it easy to create and preview icons for your mobile apps.",
+    url: "https://www.iconcombo.com",
+    callToAction: "Try it",
   },
   {
-    title: "Pokemon Game (WIP)",
+    title: "Birthday Tracker & Countdown",
     description:
-      "A simple Pokemon game built with PokeAPI where you can catch Pokemon and battle them.",
-    url: "https://pokemon.abdelhak-ajbouni.com",
-    callToAction: "Play",
-    technologies: [
-      "akar-icons:nextjs-fill",
-      "mdi:tailwind",
-      "akar-icons:redux-fill",
-    ],
-  },
-  {
-    title: "My Portfolio",
-    description:
-      "This website is built with Astro and TailwindCSS. It's a static website that is hosted on Netlify",
-    url: "https://github.com/abdelhak-ajbouni/portfolio",
-    callToAction: "Check it out",
-    technologies: [
-      "simple-icons:astro",
-      "mdi:tailwind",
-      "mdi:react",
-      "cib:netlify",
-    ],
+      "iOS app that helps you never miss a birthday. Import contacts, get push notifications, and view countdowns with a clean, intuitive interface.",
+    url: "https://apps.apple.com/lu/app/birthday-tracker-countdown/id6759844133",
+    callToAction: "Download",
   },
 ];
 ---
@@ -67,7 +43,7 @@ const projects: Project[] = [
     Here are some of the things I've built. I'm always working on new projects,
     so check back often!
   </p>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       projects.map((project) => (
         <div class="border-4 border-gray-300 rounded-lg shadow-lg p-4">
