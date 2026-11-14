@@ -8,17 +8,17 @@ import Contact from "src/islands/Contact";
 import Footer from "src/components/Footer.astro";
 ---
 
-<Layout title="Abdelhak Ajbouni Portfolio - Fullstack JavaScript Developer">
+<Layout title="Abdelhak Ajbouni Portfolio - React & React Native Developer">
   <header
     class:list={[
-      "relative h-[calc(100vh-10rem)]",
+      "relative h-[calc(100svh-6rem)] min-h-[480px]",
       "bg-gradient-to-t from-slate-700 via-slate-800 to-slate-800",
     ]}
   >
     <Intro />
     <Stars client:idle />
   </header>
-  <main>
+  <main id="main-content">
     <About />
     <Projects />
     <Contact client:idle />

@@ -45,24 +45,24 @@ export default function Contact({ }: Props) {
   return (
     <div className="container pt-2 pb-4 md:pt-6 md:pb-8">
       <div id="contact">
-        <h2 className="text-xl md:text-3xl lg:text-5xl font-bold inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">Get In Touch</h2>
-        <p className="text-sm md:text-base lg:text-xl text-gray-300">Have an exciting project where you need some help? or maybe you just wanna talk!</p>
-        <p className="text-sm md:text-base lg:text-xl text-gray-300 mb-4">Send me over a message, and let&apos;s chat.</p>
+        <h2 className="text-xl md:text-3xl lg:text-5xl font-bold inline-block mb-2 text-purple-300">Get In Touch</h2>
+        <p className="text-sm md:text-base lg:text-xl text-gray-300">Have an app idea, a project in mind, or just want to say hi?</p>
+        <p className="text-sm md:text-base lg:text-xl text-gray-300 mb-4">Drop me a message — I’d love to hear what you’re working on.</p>
         <div className='lg:flex'>
           <form className='lg:w-2/3' ref={contactForm} onSubmit={handleSubmit((data, e) => sendEmail(e))}>
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
-              <div className="relative">
+              <div className="min-w-0">
                 <TextField register={register} label="Name" required />
-                {errors.name?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your name?</p>}
+                {errors.name?.type === 'required' && <p className="text-sm text-pink-300 mb-3">What's your name?</p>}
               </div>
-              <div className="relative">
+              <div className="min-w-0">
                 <TextField register={register} label="Email" required />
-                {errors.email?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your email?</p>}
+                {errors.email?.type === 'required' && <p className="text-sm text-pink-300 mb-3">What's your email?</p>}
               </div>
             </div>
-            <div className="relative">
+            <div className="min-w-0">
               <TextArea register={register} label="Message" required rows={5} />
-              {errors.message?.type === 'required' && <p className="text-sm text-red-500 absolute right-[15px] top-[15px]">What's your message?</p>}
+              {errors.message?.type === 'required' && <p className="text-sm text-pink-300 mb-3">What's your message?</p>}
             </div>
 
             <Button
@@ -71,12 +71,12 @@ export default function Contact({ }: Props) {
               loading={loading}
             />
           </form>
-          <div className='lg:w-1/3 lg:px-8 py-2 lg:py-0'>
+          <div className='lg:w-1/3 lg:pl-8 py-2 lg:py-0 break-words'>
             <p className="text-sm lg:text-lg text-gray-300 mb-1 lg:mb-2">
-              <b className="text-pink-600">phone:</b> +352 661 287 509
+              <b className="text-pink-400">phone:</b> <a href="tel:+352661287509">+352 661 287 509</a>
             </p>
             <p className="text-sm lg:text-lg text-gray-300 mb-1 lg:mb-2">
-              <b className="text-pink-600">email:</b> abdelhak.ajbouni@gmail.com
+              <b className="text-pink-400">email:</b> <a href="mailto:abdelhak.ajbouni@gmail.com">abdelhak.ajbouni@gmail.com</a>
             </p>
           </div>
         </div>

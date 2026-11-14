@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import type * as three from 'three'
@@ -6,7 +6,8 @@ import { getRandomFloat } from 'src/utils/functions'
 
 function Stars(props: any) {
   const ref = useRef<three.Mesh>(null!)
-  const dots = new Float32Array(1000).map(() => getRandomFloat(-1, 1, 8))
+  // Each star needs a complete x/y/z position. Keep positions stable across renders.
+  const [dots] = useState(() => new Float32Array(333 * 3).map(() => getRandomFloat(-1, 1, 8)))
 
   useFrame((state, delta) => {
     if (ref.current) {

@@ -1,5 +1,6 @@
 ---
 import TopBar from "src/components/TopBar.astro";
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -19,7 +20,7 @@ const id = "G-EL8M9BZFR5";
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Personal website of Abdelhak Ajbouni. Fullstack JavaScript/TypeScript Developer."
+      content="Abdelhak Ajbouni — senior React and React Native developer in Luxembourg. Explore my web and mobile apps, built with TypeScript."
     />
     <meta name="author" content="Abdelhak Ajbouni" />
     <meta
@@ -27,15 +28,16 @@ const id = "G-EL8M9BZFR5";
       content="JMmrRR7yjGerSDAcdTftzDRJohfk6t9fcc-ljfJbHqM"
     />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Personal website of Abdelhak Ajbouni. Fullstack JavaScript/TypeScript Developer." />
+    <meta property="og:description" content="Abdelhak Ajbouni — senior React and React Native developer in Luxembourg. Explore my web and mobile apps, built with TypeScript." />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="Personal website of Abdelhak Ajbouni. Fullstack JavaScript/TypeScript Developer." />
+    <meta name="twitter:description" content="Abdelhak Ajbouni — senior React and React Native developer in Luxembourg. Explore my web and mobile apps, built with TypeScript." />
     <title>{title}</title>
   </head>
   <body class="bg-slate-700">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <TopBar />
     <slot />
 

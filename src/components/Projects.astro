@@ -7,55 +7,67 @@ type Project = {
   description: string;
   url: string;
   callToAction: string;
+  website?: string;
 };
 
 const projects: Project[] = [
   {
+    title: "AskQuran",
+    description: "A conversational Quran study companion. Ask questions in your own words and explore answers with cited verses and tafsir context.",
+    url: "https://apps.apple.com/us/app/askquran-ai-quran/id6758253553",
+    callToAction: "View on App Store",
+    website: "https://askquran.app/",
+  },
+  {
+    title: "CabinCam",
+    description: "Turn your iPhone into an offline dashcam. Record drives, protect important clips, and keep footage on your device until you choose to share it.",
+    url: "https://apps.apple.com/us/app/cabincam-private-dashcam/id6789337777",
+    callToAction: "View on App Store",
+  },
+  {
+    title: "Birthday Tracker & Countdown",
+    description: "Keep birthdays close. Import contacts, follow countdowns, and get reminders before someone’s special day.",
+    url: "https://apps.apple.com/lu/app/birthday-tracker-countdown/id6759844133",
+    callToAction: "View on App Store",
+  },
+  {
     title: "UI Test Helper",
-    description:
-      "Chrome extension that generates Testing Library queries by inspecting UI elements, making it faster to write accessible and resilient tests.",
+    description: "Inspect an element and generate Testing Library queries. Spend less time finding selectors and more time writing resilient tests.",
     url: "https://chromewebstore.google.com/detail/clldjgjeoglmkeoepnnfncfpiebjafgo",
     callToAction: "Add to Chrome",
   },
   {
     title: "IconCombo",
-    description:
-      "App icon generator for iOS and Android that makes it easy to create and preview icons for your mobile apps.",
+    description: "Create and preview app icons for iOS and Android. A simple way to give your next mobile app its own identity.",
     url: "https://www.iconcombo.com",
-    callToAction: "Try it",
-  },
-  {
-    title: "Birthday Tracker & Countdown",
-    description:
-      "iOS app that helps you never miss a birthday. Import contacts, get push notifications, and view countdowns with a clean, intuitive interface.",
-    url: "https://apps.apple.com/lu/app/birthday-tracker-countdown/id6759844133",
-    callToAction: "Download",
+    callToAction: "Explore IconCombo",
   },
 ];
 ---
 
 <Container className="pt-2 pb-4 md:pt-6 md:pb-8">
+  <section id="projects" aria-label="Things I’ve built">
   <h2
     class:list={[
       "text-xl md:text-3xl lg:text-5xl font-bold mb-2 inline-block",
-      "bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent",
+      "text-purple-300",
     ]}
   >
     Things I've Built
   </h2>
   <p class="text-sm md:text-base lg:text-xl text-gray-300 mb-4">
-    Here are some of the things I've built. I'm always working on new projects,
-    so check back often!
+    A few ideas I’ve turned into apps and tools. Have a look around — you might find your next useful little app!
   </p>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       projects.map((project) => (
-        <div class="border-4 border-gray-300 rounded-lg shadow-lg p-4">
+        <div class="project-card border-2 border-purple-300/40 rounded-xl shadow-lg p-5 md:p-6 flex flex-col">
           <h3 class="text-xl font-bold mb-2">
             <a
-              class="text-base md:text-lg lg:text-2xl text-pink-600 hover:text-pink-500"
+              class="text-base md:text-lg lg:text-2xl text-pink-400 hover:text-pink-300"
               href={project.url}
               target="_blank"
+              rel="noopener noreferrer"
             >
               {project.title}
             </a>
@@ -63,25 +75,21 @@ const projects: Project[] = [
           <p class="text-gray-300 text-xs sm:text-sm mb-4">
             {project.description}
           </p>
-          <div>
+          <div class="mt-auto flex flex-wrap gap-4">
             <a
-              class="text-xs md:text-base text-pink-600 hover:text-pink-500"
+              class="text-xs md:text-base text-pink-400 hover:text-pink-300"
               href={project.url}
               target="_blank"
+              rel="noopener noreferrer"
             >
               {project.callToAction} &gt;
             </a>
+            {project.website && <a class="text-xs md:text-base text-pink-400 hover:text-pink-300" href={project.website} target="_blank" rel="noopener noreferrer">Visit website &gt;</a>}
           </div>
         </div>
       ))
     }
   </div>
-  <a
-    class="text-sm md:text-base lg:text-xl text-pink-600 mt-4 md:mt-6 inline-block underline"
-    href="https://github.com/abdelhak-ajbouni?tab=repositories"
-    target="_blank"
-  >
-    Check my Github
-  </a>
+  </section>
 </Container>
 <Divider className="my-8 md:my-10 lg:my-12" />

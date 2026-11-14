@@ -1,0 +1,29 @@
+/* Small refinements to the original playful theme. */
+::selection { background: #c084fc; color: #1e293b; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #f9a8d4;
+  outline-offset: 4px;
+}
+#about, #projects, #contact { scroll-margin-top: 2rem; }
+.connections > div { gap: .5rem; }
+.connections a { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; }
+.connections a:hover { color: #f9a8d4; }
+.connections a:hover svg { color: inherit; }
+#contact input, #contact textarea { background-color: #f3f4f6; color: #374151; }
+#contact input::placeholder, #contact textarea::placeholder { color: #6b7280; opacity: 1; }
+#contact textarea { resize: vertical; }
+#contact form, #contact form > div { min-width: 0; }
+
+.project-card { background: rgb(30 41 59 / .25); transition: border-color 180ms, transform 180ms; }
+.project-card:hover { border-color: #f9a8d4; transform: translateY(-3px); }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 100; padding: .75rem; background: #c084fc; color: #1e293b; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 420px) {
+  .top-bar { padding-inline: 1rem; }
+  .top-bar nav .nav-link { padding-inline: .4rem; font-size: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .project-card { transition: none; }
+  .project-card:hover { transform: none; }
+}
